@@ -68,8 +68,9 @@ If an HTTP proxy is needed in order to connect to the Internet or to the devices
 
 It's important to set up correctly the no_proxy variable, otherwise the containers will try to use the http proxy to connect between each others.  
    
-# With this the ips are set using their networks in the no_proxy variable.
-# cat /etc/environment  
-http_proxy=http://192.168.18.20:3128
-https_proxy=http://192.168.18.20:3128
-no_proxy="127.,192.168.18.,10.88.,localhost,.localdomain,.automation.local" # ATTENTION: this does not work with curl: use http_proxy=... https_proxy=... curl ... when needed
+/etc/environment:
+
+    http_proxy=http://192.168.18.20:3128
+    https_proxy=http://192.168.18.20:3128
+    no_proxy="127.,192.168.18.,10.88.,localhost,.localdomain,.automation.local" # ATTENTION: this does not work with curl: use http_proxy=... https_proxy=... curl ... when needed
+
