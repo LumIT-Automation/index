@@ -99,3 +99,12 @@ It's important to set up correctly the no_proxy variable, otherwise the containe
     https_proxy=http://192.168.18.20:3128
     no_proxy="127.,192.168.18.,10.88.,localhost,.localdomain,.automation.local" # ATTENTION: this does not work with curl: use http_proxy=... https_proxy=... curl ... when needed
 
+***First run***
+ 
+Once all nodes are created and running,
+- browse to the IP address of the machine in which you have installed the packages to load the web GUI (it's located at the reverse proxy entry point URL);
+- use the superadmin login, admin@automation.local with the password you have set up;
+- via the GUI you can: 
+    - connect the platform to the appliances' assets (save their login information and check that the platform is able to fetch data with the superadmin user), 
+    - create the RBAC permissions on the assets: grant permissions to the authentication groups (the model is role to group on appliance's asset/"container", where a role is a collection of privileges). 
+- All these actions can be of course directly performed via the api-* nodes' API (first get a JWT tokwn from the Single Sign On node).
