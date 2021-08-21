@@ -61,3 +61,15 @@ The Automation platform can be installed via standard Linux packages (on a singl
 Debian 11 and CentOS 8 packages are available. Just install them as usual for your operating system of choice.
 
 Some packages need an initial configuration in order to work.
+
+***Global proxy settings***
+
+If an HTTP proxy is needed in order to connect to the Internet or to the devices, the easiest way is to set up the /etc/environment file in the HOST operating system and reboot (or export http_proxy and https_proxy variables) before install all the containers.
+
+It's important to set up correctly the no_proxy variable, otherwise the containers will try to use the http proxy to connect between each others.  
+   
+# With this the ips are set using their networks in the no_proxy variable.
+# cat /etc/environment  
+http_proxy=http://192.168.18.20:3128
+https_proxy=http://192.168.18.20:3128
+no_proxy="127.,192.168.18.,10.88.,localhost,.localdomain,.automation.local" # ATTENTION: this does not work with curl: use http_proxy=... https_proxy=... curl ... when needed
