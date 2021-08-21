@@ -57,10 +57,35 @@ Please see: https://github.com/LumIT-Automation/dev-setup
 
 **PRE-BUILT (READY TO USE) PACKAGES**
 
-The Automation platform can be installed via standard Linux packages (on a single host). 
-Debian 11 and CentOS 8 packages are available. Just install them as usual for your operating system of choice.
+The Automation platform can be installed via standard Linux packages (on a single host).
+Debian 11 and CentOS 8 packages are available. Just install them as usual for your operating system of choice (apt install -y /path/to/packages/*.deb or  dnf install -y /path/to/packages/*.rpm respectively).
 
 Some packages need an initial configuration in order to work.
+
+**Debian** packages use debconf, so the setup is performed during installation.
+The Single Sign On installer provides some basic debconf questions in order to configure the access to AD or Radius; however a manual review to the related config file in /var/lib/containers/storage/volumes/sso/_data/identityProvider/ is needed. Then restart the container service: 
+
+systemctl restart automation-interface-sso-container.service.
+
+**CentOS** packages' installation need some trivial additional steps.
+For the installation:
+ - disable SELinux (only) during installation (setenforce 0)
+ - enable epel repositories (dnf install -y epel-release) for syslog-ng
+ - install packages
+
+For the Single Sign On (aaa) node:
+ - Set the local admin (admin@automation.local) password (on the HOST): /usr/bin/sso-reset-admin-password.sh <password>
+ - Configure the authentication backend. Currently, the supported authentication backends are: active directory, openldap and radius. The configuration files are contained in the /var/lib/containers/storage/volumes/sso/_data/identityProvider folder.
+  
+   - Active directory: configure the file ad_conf.py. There is a helper script which does some preliminary configuration: /usr/bin/ad_conf_generator.sh (on the HOST) for that.
+        - Example: /usr/bin/ad_conf_generator.sh -i 10.0.111.110 -d lab.local -u adToken -p a -P -G groupRequired > /var/lib/containers/storage/volumes/sso/_data/identityProvider/ad_conf.py
+Complete configuration must then be performed manually.
+    - openldap: configure the file ldap_conf.py.
+    - radius: configure the file radius_conf.py.
+
+ - If needed, associate one or more AD groups to the superadmin user: set the SUPERADMIN_IDENTITY_AD_GROUPS list variable in /var/lib/containers/storage/volumes/sso/_data/settings.py with the DNs of these groups.
+
+- systemctl restart automation-interface-sso-container.service
 
 ***Global proxy settings***
 
