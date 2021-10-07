@@ -98,6 +98,9 @@ It's important to set up correctly the no_proxy variable, otherwise the containe
     http_proxy=http://192.168.18.20:3128
     https_proxy=http://192.168.18.20:3128
     no_proxy="127.,192.168.18.,10.88.,localhost,.localdomain,.automation.local" # ATTENTION: this does not work with curl: use http_proxy=... https_proxy=... curl ... when needed
+    
+    # It's also possible to obtain a curl compatible no_proxy configuration specifying each single ip address to exclude: 
+    no_proxy="127.0.0.1,"`echo 192.168.18.{1..255},``echo 10.88.0.{1..255},`"localhost,.localdomain,.automation.local" # this works also with curl.
 
 ***First run***
  
