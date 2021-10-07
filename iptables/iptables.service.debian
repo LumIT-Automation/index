@@ -1,0 +1,13 @@
+[Unit]
+Requires=multi-user.target
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/iptables.sh start
+ExecStop=/sbin/iptables.sh stop
+KillMode=process
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical.target

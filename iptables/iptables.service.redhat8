@@ -1,0 +1,13 @@
+[Unit]
+Requires=network-online.target
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/iptables.sh start
+ExecStop=/usr/sbin/iptables.sh stop
+KillMode=process
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

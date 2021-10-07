@@ -1,0 +1,5 @@
+# Give to the iptables.sh script the right context.
+# (/sbin is a symlink to /usr/sbin).
+
+semanage fcontext -a -s system_u -t iptables_exec_t /usr/sbin/iptables.sh
+restorecon -RFv /usr/sbin/
