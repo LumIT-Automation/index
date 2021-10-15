@@ -67,6 +67,9 @@ The Single Sign On installer provides some basic debconf questions in order to c
 
 systemctl restart automation-interface-sso-container.service.
 
+For the API nodes:
+ - Configure plugins' settings, if available and needed.
+
 **CentOS** packages' installation need some trivial additional steps.
 For the installation:
  - disable SELinux (only) during installation (setenforce 0)
@@ -86,6 +89,13 @@ Complete configuration must then be performed manually.
  - If needed, associate one or more AD groups to the superadmin user: set the SUPERADMIN_IDENTITY_AD_GROUPS list variable in /var/lib/containers/storage/volumes/sso/_data/settings.py with the DNs of these groups.
 
 - systemctl restart automation-interface-sso-container.service
+ 
+For the MTA service (smtp), configure the relay host:
+ 
+    bash /var/smtp/usr/bin/postfix-setup.sh -f <FROM_EMAIL> -a <TO_EMAIL> -t authsmtp -r <RELAY_HOST> -n <ALLOWED_SUBNET> -u <RELAY_USERNAME>:<RELAY_PASSWORD>
+ 
+For the API nodes:
+ - Configure plugins' settings, if available and needed.
 
 ***Global proxy settings***
 
