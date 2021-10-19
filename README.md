@@ -95,8 +95,8 @@ For the MTA service (smtp), configure the relay host:
     bash /var/smtp/usr/bin/postfix-setup.sh -f <FROM_EMAIL> -a <TO_EMAIL> -t authsmtp -r <RELAY_HOST> -n <ALLOWED_SUBNET> -u <RELAY_USERNAME>:<RELAY_PASSWORD>
  
 For the API nodes:
- - Configure plugins' settings, if available and needed: edit the plugin config at /var/lib/containers/storage/volumes/<container>/_data/plugins_conf/
- - Restart the service: systemctl restart automation-interface-<node>-container.service
+ - Configure plugins' settings, if available and needed: edit the plugin config at /var/lib/containers/storage/volumes/CONTAINER_NAME/_data/plugins_conf/
+ - Restart the service: systemctl restart automation-interface-CONTAINER_NAME-container.service
 
 ***Global proxy settings***
 
