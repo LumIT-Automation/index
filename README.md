@@ -77,7 +77,7 @@ For the installation:
  - install packages
 
 For the Single Sign On (aaa) node:
- - Set the local admin (admin@automation.local) password (on the HOST): /usr/bin/sso-reset-admin-password.sh <password> (for this release, avoid using spacial chars).
+ - Set the local admin (admin@automation.local) password (on the HOST): /usr/bin/sso-reset-admin-password.sh <password> (for this release, avoid using special chars).
  - Configure the authentication backend. Currently, the supported authentication backends are: active directory, openldap and radius. The configuration files are contained in the /var/lib/containers/storage/volumes/sso/_data/identityProvider folder.
   
    - Active directory: configure the file ad_conf.py. There is a helper script which does some preliminary configuration: /usr/bin/ad_conf_generator.sh (on the HOST) for that.
