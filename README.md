@@ -1,4 +1,5 @@
 
+
 **AUTOMATION PLATFORM** 
 
 The Automation Platfrom is designed to orchestrate on-premises IT infrastructures, allowing an enterprise to experience some of the advantages of the public Clouds, but with on-premises standard technologies.
@@ -40,6 +41,8 @@ The SSO service supports the following identity providers: LDAP, Active Director
 
 Any downstream service will validate the signed JWT token provided by the consumer: if it's still valid and if it's correctly signed - any service knows the public RSA key corresponding to the SSO's private. For a valid JWT token, the service will authenticate and authorize the consumer, basing on users/groups/roles information embedded within the JWT token.
 
+------------
+
 ***Deployment***
 
 Given its target audience and usage, the Platform is designed to be deployed onto a single host, within containers (podman).
@@ -49,11 +52,13 @@ On the host, again, every container is launched and managed by a Systemd unit it
 
 Each node (container) is installed and managed on the system by using standard Linux packages: all is “Linux-best-practices compliant”.
 
+------------
 
 **DEVELOPMENT**
 
 Please see: https://github.com/LumIT-Automation/dev-setup
 
+------------
 
 **PRE-BUILT (READY TO USE) PACKAGES**
 
@@ -62,7 +67,11 @@ Debian 11 and CentOS 8 packages are available. Just install them as usual for yo
 
 Some packages need an initial configuration in order to work.
 
-**Debian** packages use debconf, so the setup is performed during installation.
+**Debian/Ubuntu**
+
+Tested on Debian 11 / Ubuntu 22.
+
+Debian packages use debconf, so the setup is performed during installation.
 The Single Sign On installer provides some basic debconf questions in order to configure the access to AD or Radius; however a manual review to the related config file in /var/lib/containers/storage/volumes/sso/_data/identityProvider/ is needed. Then restart the container service: 
 
 systemctl restart automation-interface-sso-container.service.
@@ -70,17 +79,31 @@ systemctl restart automation-interface-sso-container.service.
 For the API nodes:
  - Configure plugins' settings, if available and needed.
 
-**CentOS** packages' installation need some trivial additional steps.
-For the installation:
+------------
+
+
+**CentOS/Red Hat**
+
+Tested on CentOS 8 (R.I.P.) and Red Hat 8.
+
+###### Installation
  - disable SELinux (only) during installation (setenforce 0)
- - enable epel repositories (dnf install -y epel-release) for syslog-ng
+ - enable epel repositories for syslog-ng:
+
+         CentOS:
+            dnf install -y epel-release
+        Red Hat:
+            subscription-manager repos --enable rhel-8-for-x86_64-supplementary-rpms
+            wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+            dnf install ./epel-release-latest-8.noarch.rpm
+ - remove rsyslog (dnf remove rsyslog)
  - install packages
 
-For the Single Sign On (aaa) node:
- - Set the local admin (admin@automation.local) password (on the HOST): /usr/bin/sso-reset-admin-password.sh <password> (for this release, avoid using special chars).
+###### Single Sign On (aaa) nodeSingle Sign On (aaa) node
+ - Set the local admin or superadmin (admin@automation.local) password: /usr/bin/sso-reset-admin-password.sh <password> (for this release, avoid using special chars). This is the local administrator with maximum privileges who can always login (see later on to associate him an AD group).
  - Configure the authentication backend. Currently, the supported authentication backends are: active directory, openldap and radius. The configuration files are contained in the /var/lib/containers/storage/volumes/sso/_data/identityProvider folder.
-  
-   - Active directory: configure the file ad_conf.py. There is a helper script which does some preliminary configuration: /usr/bin/ad_conf_generator.sh (on the HOST) for that.
+
+   - Active directory: configure the file ad_conf.py. There is a helper script which does some preliminary configuration: /usr/bin/ad_conf_generator.sh for that.
         - Example: /usr/bin/ad_conf_generator.sh -i 10.0.111.110 -d lab.local -u adToken -p password -P -G groupRequired > /var/lib/containers/storage/volumes/sso/_data/identityProvider/ad_conf.py
 Complete configuration must then be performed manually.
     - openldap: configure the file ldap_conf.py.
@@ -89,13 +112,18 @@ Complete configuration must then be performed manually.
  - If needed, associate one or more AD groups to the superadmin user: set the SUPERADMIN_IDENTITY_AD_GROUPS list variable in /var/lib/containers/storage/volumes/sso/_data/settings.py with the DNs of these groups.
 
 - systemctl restart automation-interface-sso-container.service
- 
+
+###### MTA
+
 For the MTA service (smtp), configure the relay host:
- 
-    bash /var/smtp/usr/bin/postfix-setup.sh -f <FROM_EMAIL> -a <TO_EMAIL> -t authsmtp -r <RELAY_HOST> -n <ALLOWED_SUBNET> -u <RELAY_USERNAME>:<RELAY_PASSWORD>
- 
-For the API nodes:
+
+    bash /usr/bin/postfix-setup.sh -f <FROM_EMAIL> -a <TO_EMAIL> -t authsmtp -r <RELAY_HOST> -n <ALLOWED_SUBNET> -u <RELAY_USERNAME>:<RELAY_PASSWORD>
+
+ALLOW_SUBNET is the subnet used by Podman (for example 10.88.0.0/24)
+
+###### API nodes
  - Configure plugins' settings, if available and needed: edit the plugin config at /var/lib/containers/storage/volumes/CONTAINER_NAME/_data/plugins_conf/
+ 
  - Restart the service: systemctl restart automation-interface-CONTAINER_NAME-container.service
 
 ***Global proxy settings***
