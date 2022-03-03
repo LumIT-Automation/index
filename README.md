@@ -43,7 +43,13 @@ Any downstream service will validate the signed JWT token provided by the consum
 
 ------------
 
-***Deployment***
+**DEVELOPMENT**
+
+Please see: https://github.com/LumIT-Automation/dev-setup
+
+------------
+
+**DEPLOYMENT**
 
 Given its target audience and usage, the Platform is designed to be deployed onto a single host, within containers (podman).
 Each service node is running within a Podman container, which is internally organized exactly like a standard Linux distribution – processes are started as services and each service unit is started by Systemd. 
@@ -51,12 +57,6 @@ Each service node is running within a Podman container, which is internally orga
 On the host, again, every container is launched and managed by a Systemd unit itself. 
 
 Each node (container) is installed and managed on the system by using standard Linux packages: all is “Linux-best-practices compliant”.
-
-------------
-
-**DEVELOPMENT**
-
-Please see: https://github.com/LumIT-Automation/dev-setup
 
 ------------
 
@@ -78,9 +78,6 @@ systemctl restart automation-interface-sso-container.service.
 
 For the API nodes:
  - Configure plugins' settings, if available and needed.
-
-------------
-
 
 **CentOS/Red Hat**
 
@@ -121,7 +118,7 @@ For the MTA service (smtp), configure the relay host:
 
 ALLOW_SUBNET is the subnet used by Podman (for example 10.88.0.0/24)
 
-###### API nodes
+** API nodes **
  - Configure plugins' settings, if available and needed: edit the plugin config at /var/lib/containers/storage/volumes/CONTAINER_NAME/_data/plugins_conf/
  
  - Restart the service: systemctl restart automation-interface-CONTAINER_NAME-container.service
@@ -140,6 +137,8 @@ It's important to set up correctly the no_proxy variable, otherwise the containe
     
     # It's also possible to obtain a curl compatible no_proxy configuration specifying each single ip address to exclude: 
     no_proxy="127.0.0.1,"`echo 192.168.18.{1..255},``echo 10.88.0.{1..255},`"localhost,.localdomain,.automation.local" # this works also with curl.
+
+------------
 
 ***First run***
  
