@@ -76,9 +76,6 @@ The Single Sign On installer provides some basic debconf questions in order to c
 
 systemctl restart automation-interface-sso-container.service.
 
-For the API nodes:
- - Configure plugins' settings, if available and needed.
-
 **CentOS/Red Hat**
 
 Tested on CentOS 8 (R.I.P.) and Red Hat 8.
@@ -118,7 +115,7 @@ For the MTA service (smtp), configure the relay host:
 
 ALLOW_SUBNET is the subnet used by Podman (for example 10.88.0.0/24)
 
-** API nodes **
+**API nodes**
  - Configure plugins' settings, if available and needed: edit the plugin config at /var/lib/containers/storage/volumes/CONTAINER_NAME/_data/plugins_conf/
  
  - Restart the service: systemctl restart automation-interface-CONTAINER_NAME-container.service
