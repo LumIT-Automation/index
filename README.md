@@ -93,7 +93,7 @@ Tested on CentOS 8 (R.I.P.) and Red Hat 8.
  - remove rsyslog (dnf remove rsyslog)
  - install packages
 
-###### Single Sign On (aaa) nodeSingle Sign On (aaa) node
+###### Single Sign On (aaa)
  - Set the local admin or superadmin (admin@automation.local) password: /usr/bin/sso-reset-admin-password.sh <password> (for this release, avoid using special chars). This is the local administrator with maximum privileges who can always login (see later on to associate him an AD group).
  - Configure the authentication backend. Currently, the supported authentication backends are: active directory, openldap and radius. The configuration files are contained in the /var/lib/containers/storage/volumes/sso/_data/identityProvider folder.
 
