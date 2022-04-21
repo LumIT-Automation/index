@@ -76,6 +76,8 @@ The Single Sign On installer provides some basic debconf questions in order to c
 
 systemctl restart automation-interface-sso-container.service.
 
+If needed, associate one or more AD groups to the superadmin user: set the SUPERADMIN_IDENTITY_AD_GROUPS list variable in /var/lib/containers/storage/volumes/sso/_data/settings.py with the DNs of these groups (again, restart the automation-interface-sso-container.service).
+
 **CentOS/Red Hat**
 
 Tested on CentOS 8 (R.I.P.) and Red Hat 8.
@@ -87,7 +89,6 @@ Tested on CentOS 8 (R.I.P.) and Red Hat 8.
          CentOS:
             dnf install -y epel-release
         Red Hat:
-            subscription-manager repos --enable rhel-8-for-x86_64-supplementary-rpms
             wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             dnf install ./epel-release-latest-8.noarch.rpm
  - remove rsyslog (dnf remove rsyslog)
