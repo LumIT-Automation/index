@@ -262,6 +262,632 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "assets",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": \n    {\n        \"address\": \"192.168.12.8\",\n        \"port\": null,\n        \"fqdn\": \"192.168.12.8\",\n        \"baseurl\": \"https://192.168.12.8/\",\n        \"tlsverify\": 0,\n        \"datacenter\": \"Milano\",\n        \"environment\": \"Developement\",\n        \"position\": \"RACK 1\",\n        \"api_type\": \"vmware\",\n        \"api_additional_data\": \"\",\n        \"username\": \"administrator@vsphere.local\",\n        \"password\": \"xxxxxxxxx\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/assets/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"assets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "datacenters (quick)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/datacenters/?quick",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"datacenters",
+								""
+							],
+							"query": [
+								{
+									"key": "quick",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clusters (quick) Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/clusters/?quick",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"clusters",
+								""
+							],
+							"query": [
+								{
+									"key": "quick",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hostsystems (quick)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/hostsystems/?quick",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"hostsystems",
+								""
+							],
+							"query": [
+								{
+									"key": "quick",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "datastores (quick)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/datastores/?quick",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"datastores",
+								""
+							],
+							"query": [
+								{
+									"key": "quick",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vmFolders (tree)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/vmFolders/tree/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"vmFolders",
+								"tree",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "networks (quick)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/networks/?quick",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"networks",
+								""
+							],
+							"query": [
+								{
+									"key": "quick",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "templates (quick)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/templates/?quick",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"templates",
+								""
+							],
+							"query": [
+								{
+									"key": "quick",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "virtualmachines (quick)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/virtualmachines/?quick",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"virtualmachines",
+								""
+							],
+							"query": [
+								{
+									"key": "quick",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customSpecs (quick)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/customSpecs/?quick",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"customSpecs",
+								""
+							],
+							"query": [
+								{
+									"key": "quick",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "template",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"vmName\": \"TEST-TWO\",\n        \"datacenterMoId\": \"datacenter-2\",\n        \"clusterMoId\": \"domain-c1441\",\n        \"hostMoId\": \"host-1363\",\n        \"vmFolderMoId\": \"group-v2475\",\n        \"mainDatastoreMoId\": \"datastore-2341\",\n        \"powerOn\": true,\n        \"numCpu\": 4,\n        \"numCoresPerSocket\": 2,\n        \"memoryMB\": 2048,\n        \"notes\": \"TEST ONE ONE\",\n        \"networkDevices\": {\n            \"existent\": [\n                {\n                    \"networkMoId\": \"network-1213\",\n                    \"label\": \"Network adapter 1\",\n                    \"deviceType\": \"vmxnet3\"\n                }\n            ],\n            \"new\": [\n                {\n                    \"networkMoId\": \"network-1213\",\n                    \"label\": \"\",\n                    \"deviceType\": \"e1000e\"\n                }\n            ]\n        },\n        \"diskDevices\": {\n            \"existent\": [\n                {\n                    \"datastoreMoId\": \"datastore-2341\",\n                    \"label\": \"Hard disk 1\",\n                    \"sizeMB\": 25600,\n                    \"deviceType\": \"thin\"\n                }\n            ],\n            \"new\": [\n                {\n                    \"datastoreMoId\": \"datastore-1364\",\n                    \"label\": \"\",\n                    \"sizeMB\": 512,\n                    \"deviceType\": \"thick lazy zeroed\"\n                }\n            ]\n        },\n        \"guestSpec\": \"centos-test2\",\n        \"deleteGuestSpecAfterDeploy\": false,\n        \"secondStageIp\": \"192.168.18.217\",\n        \"bootstrapKeyId\": 1,\n        \"postDeployCommands\": [\n            {\n                \"command\": \"waitPowerOn\",\n                \"user_args\": {}\n            },\n            {\n                \"command\": \"resizeLastPartition\",\n                \"user_args\": {\n                    \"__diskDevice\": \"sda\"\n                }\n            },\n            {\n                \"command\": \"renameVg\",\n                \"user_args\": {\n                    \"__vgName\": \"paperoga\"\n                }\n            },\n            {\n                \"command\": \"reboot\",\n                \"user_args\": {}\n            },\n            {\n                \"command\": \"addMountPoint\",\n                \"user_args\": {\n                    \"__vgName\": \"paperoga\",\n                    \"__lvName\": \"var\",\n                    \"__lvSize\": 2,\n                    \"__filesystem\": \"ext4\",\n                    \"__mountFolder\": \"/var\"\n                }\n            },\n            {\n                \"command\": \"reboot\",\n                \"user_args\": {}\n            },\n            {\n                \"command\": \"addPubKey\",\n                \"user_args\": {\n                    \"__pubKeyId\": 1\n                }\n            },\n                        {\n                \"command\": \"removeBootstrapKey\",\n                \"user_args\": {}\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/template/vm-2441/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"template",
+								"vm-2441",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "template prod example",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"vmName\": \"TEST-TWO\",\n        \"datacenterMoId\": \"datacenter-2\",\n        \"clusterMoId\": \"domain-c1441\",\n        \"hostMoId\": \"host-1363\",\n        \"vmFolderMoId\": \"group-v2475\",\n        \"mainDatastoreMoId\": \"datastore-2341\",\n        \"powerOn\": true,\n        \"numCpu\": 4,\n        \"numCoresPerSocket\": 2,\n        \"memoryMB\": 2048,\n        \"notes\": \"TEST ONE ONE\",\n        \"networkDevices\": {\n            \"existent\": [\n                {\n                    \"networkMoId\": \"network-1213\",\n                    \"label\": \"Network adapter 1\",\n                    \"deviceType\": \"vmxnet3\"\n                }\n            ],\n            \"new\": [\n                {\n                    \"networkMoId\": \"network-1213\",\n                    \"label\": \"\",\n                    \"deviceType\": \"e1000e\"\n                }\n            ]\n        },\n        \"diskDevices\": {\n            \"existent\": [\n                {\n                    \"datastoreMoId\": \"datastore-2341\",\n                    \"label\": \"Hard disk 1\",\n                    \"sizeMB\": 25600,\n                    \"deviceType\": \"thin\"\n                }\n            ],\n            \"new\": [\n                {\n                    \"datastoreMoId\": \"datastore-1364\",\n                    \"label\": \"\",\n                    \"sizeMB\": 512,\n                    \"deviceType\": \"thick lazy zeroed\"\n                }\n            ]\n        },\n        \"guestSpec\": \"centos-test2\",\n        \"deleteGuestSpecAfterDeploy\": false,\n        \"secondStageIp\": \"192.168.18.217\",\n        \"bootstrapKeyId\": 1,\n        \"postDeployCommands\": [\n            {\n                \"command\": \"waitPowerOn\",\n                \"user_args\": {}\n            },\n            {\n                \"command\": \"resizeLastPartition\",\n                \"user_args\": {\n                    \"__diskDevice\": \"sda\"\n                }\n            },\n            {\n                \"command\": \"renameVg\",\n                \"user_args\": {\n                    \"__vgName\": \"paperoga\"\n                }\n            },\n            {\n                \"command\": \"reboot\",\n                \"user_args\": {}\n            },\n            {\n                \"command\": \"addMountPoint\",\n                \"user_args\": {\n                    \"__vgName\": \"paperoga\",\n                    \"__lvName\": \"var\",\n                    \"__lvSize\": 2,\n                    \"__filesystem\": \"ext4\",\n                    \"__mountFolder\": \"/var\"\n                }\n            },\n            {\n                \"command\": \"reboot\",\n                \"user_args\": {}\n            },\n            {\n                \"command\": \"addPubKey\",\n                \"user_args\": {\n                    \"__pubKeyId\": 1\n                }\n            },\n                        {\n                \"command\": \"removeBootstrapKey\",\n                \"user_args\": {}\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/template/vm-2441/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"template",
+								"vm-2441",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bootstrapKeys",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/stage2/bootstrapkeys/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"stage2",
+								"bootstrapkeys",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bootstrapKeys",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"priv_key\": \"LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQkc1dmJtVUFBQUFFYm05dVpRQUFBQUFBQUFBQkFBQUJGd0FBQUFkemMyZ3RjbgpOaEFBQUFBd0VBQVFBQUFRRUEwL1AxU2IyVDd5OXQ4M0pYMi9PRGpxYjBjK1gzQThOUFdldDl1bDVQditGak5lRUt1TjNqCkJvUVdySktTNkpDQ2Y5V2VhUEhzWFBFSUgvdzdiNWFXbElvOG42TnJBaEdIMGRJS0txd3ZyRUF6UXlJeWsydTBWSG80bkUKa0RwK0NQK21CVEhFYjZrVkRCSTFWTG13N2NaWFpKNmhLc0tCRi9MNnFla2pGZmdZU3MxSEpVUGZuUkRQd3FsWUx6L2VhMgpmWDdvSzg4RVhGbUkxUjlwS0YrS3RHSWdjT1NKVkRVRklybk9jbGxHdU0rYlkrTUhQTDY4ZFVWa2hNOEdUWjdWQWNxZ3NRCmNrR0hEbkd2bHArK1BOQXZtTTI1bXRyZ2k3b3NVMkh6NnVUSmxVU0VFVkJtbisyU0o5TkkwUThBbnNhMTRPalUvNDRWSUgKNy9xWlpNdE1uUUFBQThpcU96eXlxanM4c2dBQUFBZHpjMmd0Y25OaEFBQUJBUURUOC9WSnZaUHZMMjN6Y2xmYjg0T09wdgpSejVmY0R3MDlaNjMyNlhrKy80V00xNFFxNDNlTUdoQmFza3BMb2tJSi8xWjVvOGV4YzhRZ2YvRHR2bHBhVWlqeWZvMnNDCkVZZlIwZ29xckMrc1FETkRJaktUYTdSVWVqaWNTUU9uNEkvNllGTWNSdnFSVU1FalZVdWJEdHhsZGtucUVxd29FWDh2cXAKNlNNVitCaEt6VWNsUTkrZEVNL0NxVmd2UDk1clo5ZnVncnp3UmNXWWpWSDJrb1g0cTBZaUJ3NUlsVU5RVWl1YzV5V1VhNAp6NXRqNHdjOHZyeDFSV1NFendaTm50VUJ5cUN4QnlRWWNPY2ErV243NDgwQytZemJtYTJ1Q0x1aXhUWWZQcTVNbVZSSVFSClVHYWY3WkluMDBqUkR3Q2V4clhnNk5UL2poVWdmditwbGt5MHlkQUFBQUF3RUFBUUFBQVFBWktIVHVDczJiYjNMS21jRHAKLzY2VzZTUk0rWGZuZjNCVXlRb0ViQnRsT0RpUmRhUFRLNnM5NDhIWlBCQ3FBRFV0UFVydlEvLzlURExkc1EvUS8vdmhwOApMb1kvcFlwWUlNbXJUUU9kM3l3VEFVZ09PbDhmdldweWMvRGIrY1ZxQmdaTHlZdDZnWVJaQ1hSQkdVVnlBNy90MXBKa3crCitVeXllTHNYdVRxUDRkc2xPTGgyYkJWcTVpZUFjWXdpWWVxMWh5aTN1bktSZEt4aGRMUnh6MmsybDlzYlJFQUtzSlFrNzUKNjhUZVZSYWJsRi9XQ0RFQld2K1BUUThTNm5QQlVhZEk3dHRFbVpCaXNraXlPTGx3d1ZuN3A5N3FWMFJzK0R4TkFId01ZZQpZaUZ4WGpnV0dFZmJUT2RpYXo5WjJLMVAvVytzMUhMejA0elNhbWxxbjdSQkFBQUFnUUNQdGJyU2M1MlZMQWNtRUN1MXdNCnB1bGxCQ2NZS0cxYlNRc3V4TnNnTkdpR3lEakY1M3ZULytleUQwdzdyNW53WlE1dHdqV3V6UlNweUpNa3hrcURzR2ZUMzkKMm12Wjd6WVVNRFZ5bG5LQmJiYnlCWXlVQXJXYmQzTXFSNHZOakFZakhueStMaXdNUVVmTFJPZXI1RjRBOCs5cTdTOXlzRgowckNNcnZvd3BPbHdBQUFJRUEvM0I4L2lRUlV2MHZ4MTljZ2VRSUhDK0tuUG1sKzRnbk80ZVZvektUUm5Yb0JtRk9YVjVjCldHOEEzSk9IQUhuWklIc1E5U0tXTkE2clJKWEtZVDRxSVp6ME5xNnRLNTdnQjd3VkZkQUdRZjV2bi9IVnZJV1lHOHVvcVMKR3FIaC8zK0hqRk5FRGxzRmZyN1lFYU1JRkZnTEFjdXhJVTgvWC9UNEVmYy9RV0M1RUFBQUNCQU5SckNjaUZnTVNtL3pnTQpTY1ZsZGNqQjdpb2dRSlp3bzNMcDYyS093NlRFTHpYbDRRZWhjbTUwTnpIcC9WMW5YN05zZ0YrditWRURTMGdObjZqMmZJCjRPcU9OZWprRFU3ZWF2bTlPOGFtZWVTOXJqM3NBUFl5dmg1UnNCOXJQUFNyYnp5elQ1dzdEekhwUzV0cTFTWGFQemdVLzcKOTRlZ0N4OHRLV2plcjdKTkFBQUFEbkp2YjNSQVlYQnBkbTEzWVhKbEFRSURCQT09Ci0tLS0tRU5EIE9QRU5TU0ggUFJJVkFURSBLRVktLS0tLQo=\",\n        \"comment\": \"usiamo questa\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/stage2/bootstrapkeys/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"stage2",
+								"bootstrapkeys",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "finalPubKeys",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/stage2/finalpubkeys/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"stage2",
+								"finalpubkeys",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "finalPubKeys",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"pub_key\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKW4k+SH3wYpzRAQAYHj0+NrGtCXA/RoKKcfSvhh5jSj3BGlYY8KIhKJ16j8MWPg1mJVA5WUgl0z4jogyPNWz6wqJcNYVqt4wKJkc3w/1eG5nBHaU1S1TlkAJfKJ7JU2kpRxyGTsS2IgUGlEb7KXPzg00D2HAWeELAwxPFHz+/QM0f0FWlaOY9Dw/yR/KC1kQNu34CHjMJHYXipIeQZLmG7kHvhw2sWAbhsxCpHwoMNrCrXA2kOCiMWpjvrYwxEVuaheeTog1XPJdxR6+YIccxtSQh35Wxm2YVPgjOSoIbbf9fMOgf9uZj6b9XtOcnrFbIQFdq1GhJmPde5XyO3MWP root@apivmware\",\n        \"comment\": \"usiamo questa\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.0.111.25/api/v1/stage2/finalpubkeys/",
+							"protocol": "http",
+							"host": [
+								"10",
+								"0",
+								"111",
+								"25"
+							],
+							"path": [
+								"api",
+								"v1",
+								"stage2",
+								"finalpubkeys",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "target",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/stage2/target/1/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"stage2",
+								"target",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
