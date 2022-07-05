@@ -78,6 +78,8 @@ systemctl restart automation-interface-sso-container.service.
 
 If needed, associate one or more AD groups to the superadmin user: set the SUPERADMIN_IDENTITY_AD_GROUPS list variable in /var/lib/containers/storage/volumes/sso/_data/settings.py with the DNs of these groups (again, restart the automation-interface-sso-container.service).
 
+If ldaps is needed, you can save the corresponding certifiacte (crt format) in /var/lib/containers/storage/volumes/sso-cacerts/_data/ (root, 644) (again, restart the automation-interface-sso-container.service).
+
 **CentOS/Red Hat**
 
 Tested on CentOS 8 (R.I.P.) and Red Hat 8.
@@ -105,6 +107,8 @@ Complete configuration must then be performed manually.
     - radius: configure the file radius_conf.py.
 
  - If needed, associate one or more AD groups to the superadmin user: set the SUPERADMIN_IDENTITY_AD_GROUPS list variable in /var/lib/containers/storage/volumes/sso/_data/settings.py with the DNs of these groups.
+ 
+- If ldaps is needed, you can save the corresponding certifiacte (crt format) in /var/lib/containers/storage/volumes/sso-cacerts/_data/ (root, 644).
 
 - systemctl restart automation-interface-sso-container.service
 
