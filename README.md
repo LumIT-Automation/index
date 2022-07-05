@@ -151,3 +151,7 @@ Once all nodes are created and running,
     - connect the platform to the appliances' assets (save their login information and check that the platform is able to fetch data with the superadmin user), 
     - create the RBAC permissions on the assets: grant permissions to the authentication groups (the model is role to group on appliance's asset/"container", where a role is a collection of privileges). 
 - All these actions can be of course directly performed via the api-* nodes' API (first get a JWT tokwn from the Single Sign On node).
+ 
+***HTTP over TLS***
+ 
+For the reverse proxy to serve https traffic, you can put your own certificate and key files in /var/lib/containers/storage/volumes/revp/_data/; remember to restrict permissions on the key file.
