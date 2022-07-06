@@ -1,6 +1,6 @@
 
 
-**AUTOMATION PLATFORM** 
+**CONCERTO AUTOMATION** 
 
 The Automation Platfrom is designed to orchestrate on-premises IT infrastructures, allowing an enterprise to experience some of the advantages of the public Clouds, but with on-premises standard technologies.
 The Automation Platfrom is GPL v3-licensed open source software.
