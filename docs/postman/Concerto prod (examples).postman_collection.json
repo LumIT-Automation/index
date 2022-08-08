@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1686f5db-47ca-47ae-aa8e-fd3381070fb7",
+		"_postman_id": "bc3f2e02-74d6-475c-9c74-da10b0a03842",
 		"name": "Concerto prod (examples)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -870,17 +870,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://10.0.111.25/api/v1/stage2/finalpubkeys/",
-							"protocol": "http",
+							"raw": "https://{{concerto_ip}}/backend/vmware/stage2/finalpubkeys/",
+							"protocol": "https",
 							"host": [
-								"10",
-								"0",
-								"111",
-								"25"
+								"{{concerto_ip}}"
 							],
 							"path": [
-								"api",
-								"v1",
+								"backend",
+								"vmware",
 								"stage2",
 								"finalpubkeys",
 								""
