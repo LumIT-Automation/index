@@ -663,6 +663,38 @@
 					"response": []
 				},
 				{
+					"name": "customSpec",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/vmware/1/customSpec/centos-test/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"vmware",
+								"1",
+								"customSpec",
+								"centos-test",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "template",
 					"request": {
 						"auth": {
