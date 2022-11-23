@@ -45,6 +45,35 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "authorizations",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/authorizations/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"authorizations",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
