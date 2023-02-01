@@ -74,7 +74,7 @@ Tested on Debian 11 / Ubuntu 22.
 Debian packages use debconf, so the setup is performed during installation.
 The Single Sign On installer provides some basic debconf questions in order to configure the access to AD or Radius; however a manual review to the related config file in /var/lib/containers/storage/volumes/sso/_data/identityProvider/ is needed. Then restart the container service: 
 
-systemctl restart automation-interface-sso-container.service.
+systemctl restart automation-interface-sso-container.service
 
 If needed, associate one or more AD groups to the superadmin user: set the SUPERADMIN_IDENTITY_AD_GROUPS list variable in /var/lib/containers/storage/volumes/sso/_data/settings.py with the DNs of these groups (again, restart the automation-interface-sso-container.service).
 
@@ -154,4 +154,6 @@ Once all nodes are created and running,
  
 ***HTTP over TLS***
  
-For the reverse proxy to serve https traffic, you can put your own certificate and key files in /var/lib/containers/storage/volumes/revp/_data/; remember to restrict permissions on the key file.
+For the reverse proxy to serve https traffic, you can put your own certificate and key files in /var/lib/containers/storage/volumes/revp/_data/; remember to restrict permissions on the key file. Then restart the container service: 
+
+systemctl restart automation-interface-revp-container.service
