@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "17d30a11-690f-4d51-b673-6f4d938f6b52",
+		"_postman_id": "e0a2460b-e842-4558-8446-9639f525977c",
 		"name": "Concerto prod (examples)",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30146130"
 	},
 	"item": [
 		{
@@ -401,6 +402,53 @@
 			"name": "api-infoblox",
 			"item": [
 				{
+					"name": "Use cases",
+					"item": [
+						{
+							"name": "list-cloud-extattrs  (accounts + providers)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{concerto_ip}}/backend/infoblox/1/list-cloud-extattrs/account+provider/",
+									"protocol": "https",
+									"host": [
+										"{{concerto_ip}}"
+									],
+									"path": [
+										"backend",
+										"infoblox",
+										"1",
+										"list-cloud-extattrs",
+										"account+provider",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "assets",
 					"request": {
 						"auth": {
@@ -425,6 +473,174 @@
 								"infoblox",
 								"assets",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "network",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "851847cbe30d3d64e74703cac5fa8992",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/infoblox/1/network/172.16.0.0/",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"infoblox",
+								"1",
+								"network",
+								"172.16.0.0",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "networks (filters)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "851847cbe30d3d64e74703cac5fa8992",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/infoblox/1/networks/?fby=*Account ID&fval=555555555555&fby=*Environment&fval=Cloud",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"infoblox",
+								"1",
+								"networks",
+								""
+							],
+							"query": [
+								{
+									"key": "fby",
+									"value": "*Account ID"
+								},
+								{
+									"key": "fval",
+									"value": "555555555555"
+								},
+								{
+									"key": "fby",
+									"value": "*Environment"
+								},
+								{
+									"key": "fval",
+									"value": "Cloud"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "network-containers (filters)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwttoken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "851847cbe30d3d64e74703cac5fa8992",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{concerto_ip}}/backend/infoblox/1/network-containers/?fby=*Environment&fval=Cloud&fby=*Country&fval=Cloud-AWS&fby=*City&fval=aws-eu-west-1",
+							"protocol": "https",
+							"host": [
+								"{{concerto_ip}}"
+							],
+							"path": [
+								"backend",
+								"infoblox",
+								"1",
+								"network-containers",
+								""
+							],
+							"query": [
+								{
+									"key": "fby",
+									"value": "*Environment"
+								},
+								{
+									"key": "fval",
+									"value": "Cloud"
+								},
+								{
+									"key": "fby",
+									"value": "*Country"
+								},
+								{
+									"key": "fval",
+									"value": "Cloud-AWS"
+								},
+								{
+									"key": "fby",
+									"value": "*City"
+								},
+								{
+									"key": "fval",
+									"value": "aws-eu-west-1"
+								}
 							]
 						}
 					},
