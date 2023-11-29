@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"admin@automation.local\",\n    \"password\": \"a\" \n}",
+							"raw": "{\n    \"username\": \"admin@automation.local\",\n    \"password\": \"Password01\" \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -391,368 +391,6 @@
 								"Common",
 								"pools",
 								""
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "api-infoblox",
-			"item": [
-				{
-					"name": "Use cases",
-					"item": [
-						{
-							"name": "list-cloud-extattrs  (accounts + providers)",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer {{jwttoken}}"
-									},
-									{
-										"key": "If-None-Match",
-										"value": "851847cbe30d3d64e74703cac5fa8992",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"url": {
-									"raw": "https://{{concerto_ip}}/backend/infoblox/1/list-cloud-extattrs/account+provider/",
-									"protocol": "https",
-									"host": [
-										"{{concerto_ip}}"
-									],
-									"path": [
-										"backend",
-										"infoblox",
-										"1",
-										"list-cloud-extattrs",
-										"account+provider",
-										""
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "assets",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{jwttoken}}"
-							}
-						],
-						"url": {
-							"raw": "https://{{concerto_ip}}/backend/infoblox/assets/",
-							"protocol": "https",
-							"host": [
-								"{{concerto_ip}}"
-							],
-							"path": [
-								"backend",
-								"infoblox",
-								"assets",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "network",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{jwttoken}}"
-							},
-							{
-								"key": "If-None-Match",
-								"value": "851847cbe30d3d64e74703cac5fa8992",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "https://{{concerto_ip}}/backend/infoblox/1/network/172.16.0.0/",
-							"protocol": "https",
-							"host": [
-								"{{concerto_ip}}"
-							],
-							"path": [
-								"backend",
-								"infoblox",
-								"1",
-								"network",
-								"172.16.0.0",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "networks (filters)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{jwttoken}}"
-							},
-							{
-								"key": "If-None-Match",
-								"value": "851847cbe30d3d64e74703cac5fa8992",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "https://{{concerto_ip}}/backend/infoblox/1/networks/?fby=*Account ID&fval=555555555555&fby=*Environment&fval=Cloud",
-							"protocol": "https",
-							"host": [
-								"{{concerto_ip}}"
-							],
-							"path": [
-								"backend",
-								"infoblox",
-								"1",
-								"networks",
-								""
-							],
-							"query": [
-								{
-									"key": "fby",
-									"value": "*Account ID"
-								},
-								{
-									"key": "fval",
-									"value": "555555555555"
-								},
-								{
-									"key": "fby",
-									"value": "*Environment"
-								},
-								{
-									"key": "fval",
-									"value": "Cloud"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "network-containers (filters)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{jwttoken}}"
-							},
-							{
-								"key": "If-None-Match",
-								"value": "851847cbe30d3d64e74703cac5fa8992",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "https://{{concerto_ip}}/backend/infoblox/1/network-containers/?fby=*Environment&fval=Cloud&fby=*Country&fval=Cloud-AWS&fby=*City&fval=aws-eu-west-1",
-							"protocol": "https",
-							"host": [
-								"{{concerto_ip}}"
-							],
-							"path": [
-								"backend",
-								"infoblox",
-								"1",
-								"network-containers",
-								""
-							],
-							"query": [
-								{
-									"key": "fby",
-									"value": "*Environment"
-								},
-								{
-									"key": "fval",
-									"value": "Cloud"
-								},
-								{
-									"key": "fby",
-									"value": "*Country"
-								},
-								{
-									"key": "fval",
-									"value": "Cloud-AWS"
-								},
-								{
-									"key": "fby",
-									"value": "*City"
-								},
-								{
-									"key": "fval",
-									"value": "aws-eu-west-1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ipv4s (next.available)(cont.)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{jwttoken}}"
-							},
-							{
-								"key": "If-None-Match",
-								"value": "851847cbe30d3d64e74703cac5fa8992",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"network\": \"10.8.0.0\",\n        \"object_type\": \"Database\",\n        \"number\": 1,\n        \"mac\": [\n            \"00:00:00:00:00:00\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A.\"\n                }\n            }\n        ]\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://{{concerto_ip}}/backend/infoblox/1/ipv4s/?next-available",
-							"protocol": "https",
-							"host": [
-								"{{concerto_ip}}"
-							],
-							"path": [
-								"backend",
-								"infoblox",
-								"1",
-								"ipv4s",
-								""
-							],
-							"query": [
-								{
-									"key": "next-available",
-									"value": null
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ipv4s (next.available)(netw.)",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer {{jwttoken}}"
-							},
-							{
-								"key": "If-None-Match",
-								"value": "851847cbe30d3d64e74703cac5fa8992",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"network\": \"10.8.128.0\",\n        \"number\": 1,\n        \"mac\": [\n            \"00:00:00:00:00:00\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A.\"\n                }\n            }\n        ]\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://{{concerto_ip}}/backend/infoblox/1/ipv4s/?next-available",
-							"protocol": "https",
-							"host": [
-								"{{concerto_ip}}"
-							],
-							"path": [
-								"backend",
-								"infoblox",
-								"1",
-								"ipv4s",
-								""
-							],
-							"query": [
-								{
-									"key": "next-available",
-									"value": null
-								}
 							]
 						}
 					},
@@ -1586,6 +1224,3461 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-infoblox",
+			"item": [
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "assets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/assets/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"assets",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "assets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"fqdn\": \"192.168.22.61\",\n        \"protocol\": \"https\",\n        \"port\": 443,\n        \"path\": \"/wapi/v2.10/\",\n        \"tlsverify\": false,\n        \"datacenter\": \"Milano\",\n        \"environment\": \"Developement\",\n        \"position\": \"RACK 1\",\n        \"username\": \"admin\",\n        \"password\": \"xxxxxx\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/assets/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"assets",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "asset",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"path\": \"/\",\n        \"port\": 80,\n        \"protocol\": \"http\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/asset/2/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"asset",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "asset",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/asset/1/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"asset",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Permissions",
+					"item": [
+						{
+							"name": "authorizations",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/authorizations/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"authorizations",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permissions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/permissions/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"permissions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permissions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"identity_group_name\": \"groupStaff\",\n        \"identity_group_identifier\": \"cn=groupstaff,cn=users,dc=lab,dc=local\",\n        \"role\": \"staff\",\n        \"network\": {\n            \"name\": \"10.8.128.0/17\",\n            \"id_asset\": 1\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/permissions/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"permissions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permission",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/permission/3/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"permission",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permission",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"identity_group_name\": \"groupStaff\",\n        \"identity_group_identifier\": \"cn=groupstaff,cn=users,dc=lab,dc=local\",\n        \"role\": \"readonly\",\n        \"network\": {\n            \"name\": \"10.8.0.0/24\",\n            \"id_asset\": 1\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/permission/6/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"permission",
+										"6",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/identity-groups/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"identity-groups",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"groupLocalNew\",\n        \"identity_group_identifier\": \"cn=groupStaff,cn=users,dc=lab,dc=localNew\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/identity-groups/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"identity-groups",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/identity-group/cn=groupStaff,cn=users,dc=lab,dc=localNew/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"identity-group",
+										"cn=groupStaff,cn=users,dc=lab,dc=localNew",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"groupNewModified\",\n        \"identity_group_identifier\": \"cn=groupstaff,cn=users,dc=lab,dc=localNewModified\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/identity-group/cn=groupStaff,cn=users,dc=lab,dc=localNew/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"identity-group",
+										"cn=groupStaff,cn=users,dc=lab,dc=localNew",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "roles",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/roles/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"roles",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "roles  (privileges)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/roles/?related=privileges",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"roles",
+										""
+									],
+									"query": [
+										{
+											"key": "related",
+											"value": "privileges"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Configuration",
+					"item": [
+						{
+							"name": "configuration",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwttoken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/configuration/global/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"configuration",
+										"global",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "configuration",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwttoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"configuration\": [\n            {\n                \"key\": \"key1\",\n                \"value\": \"value1\"\n            },\n            {\n                \"key\": \"key2\",\n                \"value\": \"value2\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/configuration/global/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"configuration",
+										"global",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "History",
+					"item": [
+						{
+							"name": "history",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/history/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"history",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "action history",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/action-history/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"action-history",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Triggers",
+					"item": [
+						{
+							"name": "triggers",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/triggers/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"triggers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "trigger",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/trigger/1/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"trigger",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "triggers",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"infoblox-ipv4s_patch\",\n        \"dst_asset_id\": 1,\n        \"action\": \"dst:ipv4s-replica\",\n        \"enabled\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/triggers/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"triggers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "trigger",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"infoblox-ipv4s_get\",\n        \"dst_asset_id\": 2,\n        \"action\": \"dst:ipv4-info\",\n        \"enabled\": 0\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/trigger/1/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"trigger",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "trigger",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/trigger/2/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"trigger",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "trigger conditions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"src_asset_id\": 1,\n        \"condition\": \"src-ip-in:10.9.0.0/18\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/trigger/1/conditions/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"trigger",
+										"1",
+										"conditions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "trigger condition",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/trigger/1/condition/3/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"trigger",
+										"1",
+										"condition",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Infoblox",
+					"item": [
+						{
+							"name": "Use cases",
+							"item": [
+								{
+									"name": "dismiss-cloud-networks",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "If-None-Match",
+												"value": "851847cbe30d3d64e74703cac5fa8992",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"data\": {\n        \"provider\": \"AWS\",\n        \"network_data\": {\n            \"Region\": \"aws-eu-west-1\",\n            \"Account ID\": \"555555555555\",\n            \"Account Name\": \"stoca\"\n        }\n    }\n}"
+										},
+										"url": {
+											"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/dismiss-cloud-networks/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{infoblox_ip}}"
+											],
+											"path": [
+												"{{infoblox_path}}",
+												"infoblox",
+												"1",
+												"dismiss-cloud-networks",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "assign-cloud-network",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "If-None-Match",
+												"value": "851847cbe30d3d64e74703cac5fa8992",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"data\": {\n        \"provider\": \"AWS\",\n        \"region\": \"aws-eu-west-1\",\n        \"network_data\": {\n            \"network\": \"next-available\",\n            \"subnetMaskCidr\": 24,\n            \"comment\": \"Nella vecchia fattoria ia ia oh\",\n            \"extattrs\": {\n                \"Account ID\": {\n                    \"value\": \"555555555555\"\n                },\n                \"Account Name\": {\n                    \"value\": \"ppp\"\n                },\n                \"Reference\": {\n                    \"value\": \"qqq\"\n                }\n            }\n        }\n    }\n}"
+										},
+										"url": {
+											"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/assign-cloud-network/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{infoblox_ip}}"
+											],
+											"path": [
+												"{{infoblox_path}}",
+												"infoblox",
+												"1",
+												"assign-cloud-network",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "modify-cloud-network",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "If-None-Match",
+												"value": "851847cbe30d3d64e74703cac5fa8992",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"data\": {\n        \"region\": \"aws-eu-west-1\",\n        \"network_data\": {\n            \"comment\": \"Nella vecchia fattoria ia ia oooooooooooh\",\n            \"extattrs\": {\n                \"Account ID\": {\n                    \"value\": \"888888888888\"\n                },\n                \"Account Name\": {\n                    \"value\": \"stoca\"\n                },\n                \"Reference\": {\n                    \"value\": \"parolaio\"\n                }\n            }\n        }\n    }\n}"
+										},
+										"url": {
+											"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/modify-cloud-network/172.16.1.0/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{infoblox_ip}}"
+											],
+											"path": [
+												"{{infoblox_path}}",
+												"infoblox",
+												"1",
+												"modify-cloud-network",
+												"172.16.1.0",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "modify-cloud-network-account",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "If-None-Match",
+												"value": "851847cbe30d3d64e74703cac5fa8992",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"data\": {\n        \"Account ID\": {\n            \"value\": \"555555555555\"\n        },\n        \"Account Name\": {\n            \"value\": \"ooo\"\n        },\n        \"Reference\": {\n            \"value\": \"qqq\"\n        }\n    }\n}"
+										},
+										"url": {
+											"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/modify-account-cloud-network/555555555555/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{infoblox_ip}}"
+											],
+											"path": [
+												"{{infoblox_path}}",
+												"infoblox",
+												"1",
+												"modify-account-cloud-network",
+												"555555555555",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "list-cloud-extattrs (providers)",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "If-None-Match",
+												"value": "851847cbe30d3d64e74703cac5fa8992",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/list-cloud-extattrs/provider/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{infoblox_ip}}"
+											],
+											"path": [
+												"{{infoblox_path}}",
+												"infoblox",
+												"1",
+												"list-cloud-extattrs",
+												"provider",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "list-cloud-extattrs  (accounts + providers)",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "If-None-Match",
+												"value": "851847cbe30d3d64e74703cac5fa8992",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/list-cloud-extattrs/account+provider/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{infoblox_ip}}"
+											],
+											"path": [
+												"{{infoblox_path}}",
+												"infoblox",
+												"1",
+												"list-cloud-extattrs",
+												"account+provider",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "list-cloud-extattrs  (accounts + providers) (filter)",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "If-None-Match",
+												"value": "851847cbe30d3d64e74703cac5fa8992",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/list-cloud-extattrs/account+provider/?fby=*Country&fval=Cloud-AWS",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{infoblox_ip}}"
+											],
+											"path": [
+												"{{infoblox_path}}",
+												"infoblox",
+												"1",
+												"list-cloud-extattrs",
+												"account+provider",
+												""
+											],
+											"query": [
+												{
+													"key": "fby",
+													"value": "*Country"
+												},
+												{
+													"key": "fval",
+													"value": "Cloud-AWS"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete-cloud-network",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "If-None-Match",
+												"value": "851847cbe30d3d64e74703cac5fa8992",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/delete-cloud-network/172.16.2.0/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{infoblox_ip}}"
+											],
+											"path": [
+												"{{infoblox_path}}",
+												"infoblox",
+												"1",
+												"delete-cloud-network",
+												"172.16.2.0",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "vlan",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/vlan/12/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"vlan",
+										"12",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "vlans",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/vlans/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"vlans",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "networks",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/networks/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"networks",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "networks (filters)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/networks/?fby=*Account ID&fval=555555555555&fby=*Environment&fval=Cloud",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"networks",
+										""
+									],
+									"query": [
+										{
+											"key": "fby",
+											"value": "*Account ID"
+										},
+										{
+											"key": "fval",
+											"value": "555555555555"
+										},
+										{
+											"key": "fby",
+											"value": "*Environment"
+										},
+										{
+											"key": "fval",
+											"value": "Cloud"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "networks",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"network\": \"192.168.21.0/24\",\n        \"comment\": \"nella vecchia fattoria\",\n        \"extattrs\": {\n            \"Gateway\": {\n                \"value\": \"192.168.21.11\"\n            },\n            \"Mask\": {\n                \"value\": \"255.255.255.0\"\n            },\n            \"Real Network\": {\n                \"value\": \"yes\"\n            }\n        },\n        \"options\": [\n            {\n                \"name\": \"host-name\",\n                \"num\": 12,\n                \"value\": \"proa\",\n                \"vendor_class\": \"DHCP\"\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/networks/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"networks",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network/172.16.2.0/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network",
+										"172.16.2.0",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network/10.9.31.0/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network",
+										"10.9.31.0",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"comment\": \"Nella vecchia fattoria ia ia oh oh oh\",\n        \"options\": [\n            {\n                \"name\": \"host-name\",\n                \"num\": 12,\n                \"value\": \"ripproa\",\n                \"vendor_class\": \"DHCP\"\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network/10.9.11.0/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network",
+										"10.9.11.0",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network (ip)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network/10.8.1.0/?related=ip",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network",
+										"10.8.1.0",
+										""
+									],
+									"query": [
+										{
+											"key": "related",
+											"value": "ip"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network (range)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network/10.8.3.0/?related=range",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network",
+										"10.8.3.0",
+										""
+									],
+									"query": [
+										{
+											"key": "related",
+											"value": "range"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network-containers",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network-containers/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network-containers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network-containers (filters)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network-containers/?fby=*Environment&fval=Cloud&fby=*Country&fval=Cloud-AWS&fby=*City&fval=aws-eu-west-1",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network-containers",
+										""
+									],
+									"query": [
+										{
+											"key": "fby",
+											"value": "*Environment"
+										},
+										{
+											"key": "fval",
+											"value": "Cloud"
+										},
+										{
+											"key": "fby",
+											"value": "*Country"
+										},
+										{
+											"key": "fval",
+											"value": "Cloud-AWS"
+										},
+										{
+											"key": "fby",
+											"value": "*City"
+										},
+										{
+											"key": "fval",
+											"value": "aws-eu-west-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network-container-networks",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network-container/10.8.0.0/17/networks/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network-container",
+										"10.8.0.0",
+										"17",
+										"networks",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "network-container-next-available-networks",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"subnet_mask_cidr\": 24,\n        \"network_data\": {\n            \"network\": \"next-available\",\n            \"comment\": \"Nella vecchia fattoria ia ia oh 1\",\n            \"vlans\": [\n                {\n                    \"vlan\": \"vlan/ZG5zLnZsYW4kLmNvbS5pbmZvYmxveC5kbnMudmxhbl92aWV3JHZ2bGFuLjExLjIwLjEx:vvlan/vvlan0011/11\"\n                }\n            ],\n            \"extattrs\": {\n                \"Real Network\": {\n                    \"value\": \"no\"\n                },\n                \"Account ID\": {\n                    \"value\": \"VannaMarchi\"\n                },\n                \"Account Name\": {\n                    \"value\": \"Vanna Marchi\"\n                }\n            },\n            \"options\": [\n                {\n                    \"name\": \"host-name\",\n                    \"num\": 12,\n                    \"value\": \"proa\",\n                    \"vendor_class\": \"DHCP\"\n                }\n            ]\n        }\n    }\n}"
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/network-container/10.9.0.0/20/networks/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"network-container",
+										"10.9.0.0",
+										"20",
+										"networks",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ranges",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ranges/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ranges",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "range",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/range/10.8.1.2/10.8.1.2/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"range",
+										"10.8.1.2",
+										"10.8.1.2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tree",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/tree/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"tree",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4s",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"ipv4addr\": \"10.8.1.100\",\n        \"number\": 1,\n        \"mac\": [\n            \"00:00:00:00:00:00\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server Direct Creation\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A.\"\n                }\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4s/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4s",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4s (objects)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"ipv4addr\": \"10.8.1.100\",\n        \"number\": 1,\n        \"mac\": [\n            \"00:00:00:00:00:00\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server Direct Creation\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A.\"\n                }\n            }\n        ],\n        \"options\": [\n            {\n                \"name\": \"dhcp-lease-time\",\n                \"num\": 51,\n                \"use_option\": false,\n                \"value\": \"43200\",\n                \"vendor_class\": \"DHCP\"\n            },\n            {\n                \"name\": \"host-name\",\n                \"num\": 12,\n                \"value\": \"proa\",\n                \"vendor_class\": \"DHCP\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4s/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4s",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4s (next.available)(cont.)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"network\": \"192.168.100.0\",\n\n        \"number\": 2,\n        \"mac\": [\n            \"00:00:00:00:00:00\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A.\"\n                }\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4s/?next-available&rep=1",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4s",
+										""
+									],
+									"query": [
+										{
+											"key": "next-available",
+											"value": null
+										},
+										{
+											"key": "rep",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4s (next.available) with option 12",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"network\": \"10.8.0.0\",\n        \"object_type\": \"Server\",\n        \"number\": 1,\n        \"mac\": [\n            \"00:00:00:00:00:00\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A.\"\n                }\n            }\n        ],\n        \"options\": [\n            {\n                \"name\": \"host-name\",\n                \"num\": 12,\n                \"value\": \"proa\",\n                \"vendor_class\": \"DHCP\"\n            }\n        ]\n\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4s/?next-available",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4s",
+										""
+									],
+									"query": [
+										{
+											"key": "next-available",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4s (next.available in range)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"network\": \"10.8.0.0\",\n        \"object_type\": \"Server\",\n        \"range_by_reference\": \"Lo Zio Pino\",\n        \"reference_prefix\": \"ciccio\",\n        \"number\": 2,\n        \"mac\": [\n            \"00:00:00:00:00:00\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A.\"\n                }\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4s/?next-available",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4s",
+										""
+									],
+									"query": [
+										{
+											"key": "next-available",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4s (next.available)(netw.)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"network\": \"10.8.128.0\",\n        \"number\": 1,\n        \"mac\": [\n            \"00:00:00:00:00:00\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A.\"\n                }\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4s/?next-available",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4s",
+										""
+									],
+									"query": [
+										{
+											"key": "next-available",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4s (next.available)(heartbeat)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"network\": \"10.8.10.0\",\n        \"object_type\": \"Heartbeat\",\n        \"number\": 2,\n        \"mac\": [\n            \"00:00:01:01:00:01\",\n            \"00:00:01:01:00:02\"\n        ],\n        \"extattrs\": [\n            {\n                \"Name Server\": {\n                    \"value\": \"Server\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A. // 1\"\n                }\n            },\n            {\n                \"Name Server\": {\n                    \"value\": \"Server\"\n                },\n                \"Reference\": {\n                    \"value\": \"LumIT S.p.A. // 2\"\n                }\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4s/?next-available",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4s",
+										""
+									],
+									"query": [
+										{
+											"key": "next-available",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4/10.8.0.41/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4",
+										"10.8.0.41",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4/10.8.3.35/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4",
+										"10.8.3.35",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"mac\": \"00:00:f0:00:11:00\",\n        \"extattrs\": {\n            \"Name Server\": {\n                \"value\": \"Server (modified)\"\n            }\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4/10.8.1.100/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4",
+										"10.8.1.100",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ipv4 (objects)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "851847cbe30d3d64e74703cac5fa8992",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"mac\": \"00:00:f0:00:11:00\",\n        \"extattrs\": {\n            \"Name Server\": {\n                \"value\": \"Server (modified)\"\n            }\n        },\n        \"options\": [\n            {\n                \"name\": \"dhcp-lease-time\",\n                \"num\": 51,\n                \"use_option\": false,\n                \"value\": \"43200\",\n                \"vendor_class\": \"DHCP\"\n            },\n            {\n                \"name\": \"host-name\",\n                \"num\": 12,\n                \"value\": \"riproa\",\n                \"vendor_class\": \"DHCP\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{infoblox_ip}}/{{infoblox_path}}/infoblox/1/ipv4/10.8.0.41/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{infoblox_ip}}"
+									],
+									"path": [
+										"{{infoblox_path}}",
+										"infoblox",
+										"1",
+										"ipv4",
+										"10.8.0.41",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api-proofpoint",
+			"item": [
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "assets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/assets/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"assets",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "assets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"fqdn\": \"results.eu.securityeducation.com\",\n        \"name\": \"Client.1\",\n        \"protocol\": \"https\",\n        \"port\": 443,\n        \"path\": \"/api/reporting/v0.3.0/\",\n        \"tlsverify\": true,\n        \"baseurl\": \"https://results.eu.securityeducation.com/api/reporting/v0.3.0/\",\n        \"datacenter\": \"\",\n        \"environment\": \"Development\",\n        \"position\": \"Virtual\",\n        \"apitoken\": \"APITOKEN\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/assets/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"assets",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "asset",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"tlsverify\": true\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/asset/2/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"asset",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "asset",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/asset/2/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"asset",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Permissions",
+					"item": [
+						{
+							"name": "authorizations",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/authorizations/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"authorizations",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permissions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/permissions/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"permissions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permissions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"identity_group_identifier\": \"cn=groupstaff,cn=users,dc=lab,dc=local\",\n        \"role\": \"staff\",\n        \"id_asset\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/permissions/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"permissions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permission",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"identity_group_identifier\": \"cn=groupstaff,cn=users,dc=lab,dc=local\",\n        \"role\": \"readonly\",\n        \"id_asset\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/permission/3/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"permission",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permission",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/permission/3/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"permission",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/identity-groups/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"identity-groups",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"groupLocalNew\",\n        \"identity_group_identifier\": \"cn=groupStaff,cn=users,dc=lab,dc=localNew\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/identity-groups/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"identity-groups",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"groupStaffModified\",\n        \"identity_group_identifier\": \"cn=groupStaff,cn=users,dc=lab,dc=localNewModified\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/identity-group/cn=groupStaff,cn=users,dc=lab,dc=localNew/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"identity-group",
+										"cn=groupStaff,cn=users,dc=lab,dc=localNew",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/identity-group/cn=groupStaff,cn=users,dc=lab,dc=localNewModified/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"identity-group",
+										"cn=groupStaff,cn=users,dc=lab,dc=localNewModified",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "roles",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/roles/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"roles",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "roles  (privileges)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/roles/?related=privileges",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"roles",
+										""
+									],
+									"query": [
+										{
+											"key": "related",
+											"value": "privileges"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Configuration",
+					"item": [
+						{
+							"name": "configuration",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwttoken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/configuration/global/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"configuration",
+										"global",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "configuration",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwttoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"configuration\": [\n            {\n                \"key\": \"key1\",\n                \"value\": \"value1\"\n            },\n            {\n                \"key\": \"key2\",\n                \"value\": \"value2\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/configuration/global/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"configuration",
+										"global",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "History",
+					"item": [
+						{
+							"name": "history",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/history/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"history",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "action history",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/action-history/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{proofpoint_ip}}"
+									],
+									"path": [
+										"{{proofpoint_path}}",
+										"proofpoint",
+										"action-history",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Proofpoint",
+					"item": [
+						{
+							"name": "PSAT",
+							"item": [
+								{
+									"name": "users",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/users/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"users",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
 				}
 			]
 		}
