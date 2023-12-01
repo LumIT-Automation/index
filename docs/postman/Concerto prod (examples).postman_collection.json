@@ -4642,6 +4642,47 @@
 							"name": "PSAT",
 							"item": [
 								{
+									"name": "Usecases",
+									"item": [
+										{
+											"name": "stub",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"type": "text",
+														"value": "Bearer {{jwttoken}}"
+													}
+												],
+												"url": {
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/stub/",
+													"protocol": "{{proto}}",
+													"host": [
+														"{{proofpoint_ip}}"
+													],
+													"path": [
+														"{{proofpoint_path}}",
+														"proofpoint",
+														"1",
+														"usecases",
+														"stub",
+														""
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
 									"name": "users",
 									"request": {
 										"auth": {
@@ -4670,6 +4711,264 @@
 												"proofpoint",
 												"1",
 												"users",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "knowledge-assesments",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/knowledge-assesments/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"knowledge-assesments",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "knowledge-assesments (filter)",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/knowledge-assesments//?filter[_assignmentname]=[LumIT General Security Assessment]",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"knowledge-assesments",
+												"",
+												""
+											],
+											"query": [
+												{
+													"key": "filter[_assignmentname]",
+													"value": "[LumIT General Security Assessment]"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "phish-alarms",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/phish-alarms/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"phish-alarms",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "phishings",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/phishings/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"phishings",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "phishings (extended)",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/phishings/?extended=true",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"phishings",
+												""
+											],
+											"query": [
+												{
+													"key": "extended",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "trainings",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/trainings/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"trainings",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "training-enrollments",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/training-enrollments/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"training-enrollments",
 												""
 											]
 										}
