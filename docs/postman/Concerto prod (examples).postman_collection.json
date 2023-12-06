@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e0a2460b-e842-4558-8446-9639f525977c",
+		"_postman_id": "c3c65e4d-ba6e-49a0-ae07-e12b38eed328",
 		"name": "Concerto prod (examples)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30146130"
@@ -4976,6 +4976,1276 @@
 									"response": []
 								}
 							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api-zscaler",
+			"item": [
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "assets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/assets/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"assets",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "assets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"fqdn\": \"zsapi.zscloud.net\",\n        \"protocol\": \"https\",\n        \"port\": 443,\n        \"path\": \"/api/v1/\",\n        \"tlsverify\": true,\n        \"baseurl\": \"https://zsapi.zscloud.net:443/api/v1/\",\n        \"admin_fqdn\": \"admin.zscloud.net\",\n        \"admin_protocol\": \"https\",\n        \"admin_port\": 443,\n        \"admin_path\": \"/api/v1/\",\n        \"admin_tlsverify\": true,\n        \"admin_baseurl\": \"https://admin.zscloud.net:443/zsapi/v1/\",\n        \"datacenter\": \"\",\n        \"environment\": \"Development\",\n        \"position\": \"Virtual\",\n        \"username\": \"xxxxxxxxxxxx\",\n        \"password\": \"xxxxxxxxx\",\n        \"apikey\": \"key\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/assets/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"assets",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "asset",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"baseurl\": \"https://zsapi.zscloud.net/api/v2/\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/asset/2/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"asset",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "asset",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/asset/2/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"asset",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Permissions",
+					"item": [
+						{
+							"name": "authorizations",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/authorizations/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"authorizations",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permissions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/permissions/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"permissions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permissions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"identity_group_identifier\": \"cn=groupstaff,cn=users,dc=lab,dc=local\",\n        \"role\": \"staff\",\n        \"id_asset\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/permissions/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"permissions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permission",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"identity_group_identifier\": \"cn=groupstaff,cn=users,dc=lab,dc=local\",\n        \"role\": \"readonly\",\n        \"id_asset\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/permission/3/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"permission",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permission",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/permission/3/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"permission",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/identity-groups/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"identity-groups",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"groupLocalNew\",\n        \"identity_group_identifier\": \"cn=groupStaff,cn=users,dc=lab,dc=localNew\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/identity-groups/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"identity-groups",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"groupStaffModified\",\n        \"identity_group_identifier\": \"cn=groupStaff,cn=users,dc=lab,dc=localNewModified\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/identity-group/cn=groupStaff,cn=users,dc=lab,dc=localNew/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"identity-group",
+										"cn=groupStaff,cn=users,dc=lab,dc=localNew",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identity-group",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/identity-group/cn=groupStaff,cn=users,dc=lab,dc=localNewModified/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"identity-group",
+										"cn=groupStaff,cn=users,dc=lab,dc=localNewModified",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "roles",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/roles/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"roles",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "roles  (privileges)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "c485212f298abe5f8b867ca42617292a",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/roles/?related=privileges",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"roles",
+										""
+									],
+									"query": [
+										{
+											"key": "related",
+											"value": "privileges"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Configuration",
+					"item": [
+						{
+							"name": "configuration",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwttoken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/configuration/global/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"configuration",
+										"global",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "configuration",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwttoken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"configuration\": [\n            {\n                \"key\": \"key1\",\n                \"value\": \"value1\"\n            },\n            {\n                \"key\": \"key2\",\n                \"value\": \"value2\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/configuration/global/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"configuration",
+										"global",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "History",
+					"item": [
+						{
+							"name": "history",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/history/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"history",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "action history",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/action-history/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"action-history",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Zscaler",
+					"item": [
+						{
+							"name": "Use cases",
+							"item": [
+								{
+									"name": "Categories report",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/categories-report/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{zscaler_ip}}"
+											],
+											"path": [
+												"{{zscaler_path}}",
+												"zscaler",
+												"1",
+												"categories-report",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Categories assessment",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/2/categories-assessment/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{zscaler_ip}}"
+											],
+											"path": [
+												"{{zscaler_path}}",
+												"zscaler",
+												"2",
+												"categories-assessment",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Lookup custom category urls",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/2/categories-lookup-urls/",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{zscaler_ip}}"
+											],
+											"path": [
+												"{{zscaler_path}}",
+												"zscaler",
+												"2",
+												"categories-lookup-urls",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "locations",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/locations/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"locations",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "locations",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"name\": \"locazzzione\",\n        \"ipAddresses\": [\n            \"93.44.207.83\"\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/locations/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"locations",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "URL category",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/url-category/WEB_CONFERENCING/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"url-category",
+										"WEB_CONFERENCING",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "URL categories",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/url-categories/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"url-categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "URL categories (full)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/url-categories/?full",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"url-categories",
+										""
+									],
+									"query": [
+										{
+											"key": "full",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "policies firewall",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/policies-firewall/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"policies-firewall",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin audit log",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/admin-audit-log/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"admin-audit-log",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "URL filtering rule",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/url-filtering-rule/204934/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"url-filtering-rule",
+										"204934",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "URL filtering rules",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/url-filtering-rules/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"url-filtering-rules",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "file type rules",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/file-type-rules/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"file-type-rules",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SSL inspection rules",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/ssl-inspection-rules/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"ssl-inspection-rules",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "audit SSL inspection",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{jwttoken}}"
+									}
+								],
+								"url": {
+									"raw": "{{proto}}://{{zscaler_ip}}/{{zscaler_path}}/zscaler/1/audit/ssl-inspection/",
+									"protocol": "{{proto}}",
+									"host": [
+										"{{zscaler_ip}}"
+									],
+									"path": [
+										"{{zscaler_path}}",
+										"zscaler",
+										"1",
+										"audit",
+										"ssl-inspection",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
