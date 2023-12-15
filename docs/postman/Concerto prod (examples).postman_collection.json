@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c3c65e4d-ba6e-49a0-ae07-e12b38eed328",
+		"_postman_id": "f2957883-84a6-4106-9385-f9a0e903b83a",
 		"name": "Concerto prod (examples)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30146130"
@@ -4674,6 +4674,43 @@
 														"1",
 														"usecases",
 														"stub",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "report 1",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"type": "text",
+														"value": "Bearer {{jwttoken}}"
+													}
+												],
+												"url": {
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-1/33%20Question%20Broad%20Assessment/",
+													"protocol": "{{proto}}",
+													"host": [
+														"{{proofpoint_ip}}"
+													],
+													"path": [
+														"{{proofpoint_path}}",
+														"proofpoint",
+														"1",
+														"usecases",
+														"report-1",
+														"33%20Question%20Broad%20Assessment",
 														""
 													]
 												}
