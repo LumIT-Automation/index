@@ -4699,7 +4699,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-1/33%20Question%20Broad%20Assessment/",
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-1/LumIT%20General%20Security%20Assessment/",
 													"protocol": "{{proto}}",
 													"host": [
 														"{{proofpoint_ip}}"
@@ -4710,7 +4710,7 @@
 														"1",
 														"usecases",
 														"report-1",
-														"33%20Question%20Broad%20Assessment",
+														"LumIT%20General%20Security%20Assessment",
 														""
 													]
 												}
