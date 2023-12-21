@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f2957883-84a6-4106-9385-f9a0e903b83a",
+		"_postman_id": "5253933d-e0a1-4df9-a287-3b45e339c15a",
 		"name": "Concerto prod (examples)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30146130"
@@ -24,14 +24,13 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{concerto_ip}}/auth/api/v1/token/",
-							"protocol": "https",
+							"raw": "{{proto}}://{{sso_ip}}/{{sso_path}}api/v1/token/",
+							"protocol": "{{proto}}",
 							"host": [
-								"{{concerto_ip}}"
+								"{{sso_ip}}"
 							],
 							"path": [
-								"auth",
-								"api",
+								"{{sso_path}}api",
 								"v1",
 								"token",
 								""
@@ -4711,6 +4710,42 @@
 														"usecases",
 														"report-1",
 														"LumIT%20General%20Security%20Assessment",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "report 1 params",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"type": "text",
+														"value": "Bearer {{jwttoken}}"
+													}
+												],
+												"url": {
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-1/",
+													"protocol": "{{proto}}",
+													"host": [
+														"{{proofpoint_ip}}"
+													],
+													"path": [
+														"{{proofpoint_path}}",
+														"proofpoint",
+														"1",
+														"usecases",
+														"report-1",
 														""
 													]
 												}
