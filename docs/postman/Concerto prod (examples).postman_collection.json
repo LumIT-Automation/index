@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5253933d-e0a1-4df9-a287-3b45e339c15a",
+		"_postman_id": "6305b212-22ff-4ee7-a923-65dedababb7e",
 		"name": "Concerto prod (examples)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30146130"
@@ -4680,7 +4680,7 @@
 											"response": []
 										},
 										{
-											"name": "report 1",
+											"name": "report knowledge assessment",
 											"request": {
 												"auth": {
 													"type": "noauth"
@@ -4698,7 +4698,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-1/LumIT%20General%20Security%20Assessment/",
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-knowledge-assessment/LumIT%20General%20Security%20Assessment/",
 													"protocol": "{{proto}}",
 													"host": [
 														"{{proofpoint_ip}}"
@@ -4708,7 +4708,7 @@
 														"proofpoint",
 														"1",
 														"usecases",
-														"report-1",
+														"report-knowledge-assessment",
 														"LumIT%20General%20Security%20Assessment",
 														""
 													]
@@ -4717,7 +4717,7 @@
 											"response": []
 										},
 										{
-											"name": "report 1 params",
+											"name": "report knowledge assessment params",
 											"request": {
 												"auth": {
 													"type": "noauth"
@@ -4735,7 +4735,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-1/",
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-knowledge-assessment/",
 													"protocol": "{{proto}}",
 													"host": [
 														"{{proofpoint_ip}}"
@@ -4745,7 +4745,7 @@
 														"proofpoint",
 														"1",
 														"usecases",
-														"report-1",
+														"report-knowledge-assessment",
 														""
 													]
 												}
