@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "730f5836-8b0a-43c8-b9af-718571b078b5",
+		"_postman_id": "aa7d4095-c3d4-4c1c-a673-a9b934dcd00b",
 		"name": "Concerto prod (examples)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30146130"
@@ -3967,7 +3967,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"fqdn\": \"results.eu.securityeducation.com\",\n        \"name\": \"Client.1\",\n        \"protocol\": \"https\",\n        \"port\": 443,\n        \"path\": \"/api/reporting/v0.3.0/\",\n        \"tlsverify\": true,\n        \"baseurl\": \"https://results.eu.securityeducation.com/api/reporting/v0.3.0/\",\n        \"datacenter\": \"\",\n        \"environment\": \"Development\",\n        \"position\": \"Virtual\",\n        \"apitoken\": \"APITOKEN\"\n    }\n}",
+									"raw": "{\n    \"data\": {\n        \"fqdn\": \"results.eu.securityeducation.com\",\n        \"name\": \"Client.1\",\n        \"protocol\": \"https\",\n        \"port\": 443,\n        \"path\": \"/api/reporting/v0.3.0/\",\n        \"tlsverify\": true,\n        \"baseurl\": \"https://results.eu.securityeducation.com/api/reporting/v0.3.0/\",\n        \"datacenter\": \"\",\n        \"environment\": \"Development\",\n        \"position\": \"Virtual\",\n        \"apitoken\": \"APITOKEN\",\n        \"logo_base64\": \"\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3975,10 +3975,10 @@
 									}
 								},
 								"url": {
-									"raw": "{{proto}}://{{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/assets/",
+									"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/assets/",
 									"protocol": "{{proto}}",
 									"host": [
-										"{{{proofpoint_ip}}"
+										"{{proofpoint_ip}}"
 									],
 									"path": [
 										"{{proofpoint_path}}",
@@ -4727,7 +4727,7 @@
 											"response": []
 										},
 										{
-											"name": "report traiing",
+											"name": "report training",
 											"request": {
 												"auth": {
 													"type": "noauth"
