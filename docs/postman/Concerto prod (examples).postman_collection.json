@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "aa7d4095-c3d4-4c1c-a673-a9b934dcd00b",
+		"_postman_id": "c5db0226-008f-4388-aa53-eece9541e007",
 		"name": "Concerto prod (examples)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30146130"
@@ -4750,7 +4750,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-training/TEST2/",
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-training/Test - Base64 - a3/",
 													"protocol": "{{proto}}",
 													"host": [
 														"{{proofpoint_ip}}"
@@ -4761,7 +4761,49 @@
 														"1",
 														"usecases",
 														"report-training",
-														"TEST2",
+														"Test - Base64 - a3",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "report phishing",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"type": "text",
+														"value": "Bearer {{jwttoken}}"
+													},
+													{
+														"key": "X-User-Defined-Remote-API-Token",
+														"value": "{{User_Defined_Remote_API_Token}}",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-phishing/Test - Base64 - a3/",
+													"protocol": "{{proto}}",
+													"host": [
+														"{{proofpoint_ip}}"
+													],
+													"path": [
+														"{{proofpoint_path}}",
+														"proofpoint",
+														"1",
+														"usecases",
+														"report-phishing",
+														"Test - Base64 - a3",
 														""
 													]
 												}
@@ -4852,7 +4894,7 @@
 									"response": []
 								},
 								{
-									"name": "knowledge-assesments",
+									"name": "knowledge-assessments",
 									"request": {
 										"auth": {
 											"type": "noauth"
@@ -4875,7 +4917,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/knowledge-assesments/",
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/knowledge-assessments/",
 											"protocol": "{{proto}}",
 											"host": [
 												"{{proofpoint_ip}}"
@@ -4884,7 +4926,7 @@
 												"{{proofpoint_path}}",
 												"proofpoint",
 												"1",
-												"knowledge-assesments",
+												"knowledge-assessments",
 												""
 											]
 										}
@@ -4892,7 +4934,7 @@
 									"response": []
 								},
 								{
-									"name": "knowledge-assesments (filter)",
+									"name": "knowledge-assessments (filter)",
 									"request": {
 										"auth": {
 											"type": "noauth"
@@ -4915,7 +4957,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/knowledge-assesments//?filter[_assignmentname]=[LumIT General Security Assessment]",
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/knowledge-assessments//?filter[_assignmentname]=[LumIT General Security Assessment]",
 											"protocol": "{{proto}}",
 											"host": [
 												"{{proofpoint_ip}}"
@@ -4924,7 +4966,7 @@
 												"{{proofpoint_path}}",
 												"proofpoint",
 												"1",
-												"knowledge-assesments",
+												"knowledge-assessments",
 												"",
 												""
 											],
@@ -5013,6 +5055,52 @@
 												"1",
 												"phishings",
 												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "phishings (filter)",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{jwttoken}}"
+											},
+											{
+												"key": "X-User-Defined-Remote-API-Token",
+												"value": "{{User_Defined_Remote_API_Token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/phishings/?filter[_campaignname]=[Test - Base64 - a3]",
+											"protocol": "{{proto}}",
+											"host": [
+												"{{proofpoint_ip}}"
+											],
+											"path": [
+												"{{proofpoint_path}}",
+												"proofpoint",
+												"1",
+												"phishings",
+												""
+											],
+											"query": [
+												{
+													"key": "filter[_campaignname]",
+													"value": "[Test - Base64 - a3]"
+												}
 											]
 										}
 									},
