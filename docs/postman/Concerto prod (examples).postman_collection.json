@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "02314f9e-c3a5-43ee-90b8-2c8aa66de4b3",
+		"_postman_id": "4d7ba719-8ec9-4a64-9ae7-d61682d5879d",
 		"name": "Concerto prod (examples)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30146130"
@@ -4690,7 +4690,7 @@
 												"auth": {
 													"type": "noauth"
 												},
-												"method": "GET",
+												"method": "PUT",
 												"header": [
 													{
 														"key": "Content-Type",
@@ -4704,11 +4704,16 @@
 													{
 														"key": "X-User-Defined-Remote-API-Token",
 														"value": "{{User_Defined_Remote_API_Token}}",
-														"type": "text"
+														"type": "text",
+														"disabled": true
 													}
 												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"data\": {\n        \"assignmentname\": \"LumIT General Security Assessment\"\n    }\n}"
+												},
 												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-knowledge-assessment/LumIT%20General%20Security%20Assessment/",
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-knowledge-assessment/",
 													"protocol": "{{proto}}",
 													"host": [
 														"{{proofpoint_ip}}"
@@ -4719,173 +4724,6 @@
 														"1",
 														"usecases",
 														"report-knowledge-assessment",
-														"LumIT%20General%20Security%20Assessment",
-														""
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "report training",
-											"request": {
-												"auth": {
-													"type": "noauth"
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Authorization",
-														"type": "text",
-														"value": "Bearer {{jwttoken}}"
-													},
-													{
-														"key": "X-User-Defined-Remote-API-Token",
-														"value": "{{User_Defined_Remote_API_Token}}",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-training/Test - Base64 - a3/",
-													"protocol": "{{proto}}",
-													"host": [
-														"{{proofpoint_ip}}"
-													],
-													"path": [
-														"{{proofpoint_path}}",
-														"proofpoint",
-														"1",
-														"usecases",
-														"report-training",
-														"Test - Base64 - a3",
-														""
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "report training params",
-											"request": {
-												"auth": {
-													"type": "noauth"
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Authorization",
-														"type": "text",
-														"value": "Bearer {{jwttoken}}"
-													},
-													{
-														"key": "X-User-Defined-Remote-API-Token",
-														"value": "{{User_Defined_Remote_API_Token}}",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-training/",
-													"protocol": "{{proto}}",
-													"host": [
-														"{{proofpoint_ip}}"
-													],
-													"path": [
-														"{{proofpoint_path}}",
-														"proofpoint",
-														"1",
-														"usecases",
-														"report-training",
-														""
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "report phishing",
-											"request": {
-												"auth": {
-													"type": "noauth"
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Authorization",
-														"type": "text",
-														"value": "Bearer {{jwttoken}}"
-													},
-													{
-														"key": "X-User-Defined-Remote-API-Token",
-														"value": "{{User_Defined_Remote_API_Token}}",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-phishing/Test - Base64 - a3/",
-													"protocol": "{{proto}}",
-													"host": [
-														"{{proofpoint_ip}}"
-													],
-													"path": [
-														"{{proofpoint_path}}",
-														"proofpoint",
-														"1",
-														"usecases",
-														"report-phishing",
-														"Test - Base64 - a3",
-														""
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "report phishing params",
-											"request": {
-												"auth": {
-													"type": "noauth"
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Authorization",
-														"type": "text",
-														"value": "Bearer {{jwttoken}}"
-													},
-													{
-														"key": "X-User-Defined-Remote-API-Token",
-														"value": "{{User_Defined_Remote_API_Token}}",
-														"type": "text"
-													}
-												],
-												"url": {
-													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-phishing/",
-													"protocol": "{{proto}}",
-													"host": [
-														"{{proofpoint_ip}}"
-													],
-													"path": [
-														"{{proofpoint_path}}",
-														"proofpoint",
-														"1",
-														"usecases",
-														"report-phishing",
 														""
 													]
 												}
@@ -4912,7 +4750,8 @@
 													{
 														"key": "X-User-Defined-Remote-API-Token",
 														"value": "{{User_Defined_Remote_API_Token}}",
-														"type": "text"
+														"type": "text",
+														"disabled": true
 													}
 												],
 												"url": {
@@ -4927,6 +4766,182 @@
 														"1",
 														"usecases",
 														"report-knowledge-assessment",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "report training",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"type": "text",
+														"value": "Bearer {{jwttoken}}"
+													},
+													{
+														"key": "X-User-Defined-Remote-API-Token",
+														"value": "{{User_Defined_Remote_API_Token}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"data\": {\n        \"assignmentname\": \"TEST2\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-training/",
+													"protocol": "{{proto}}",
+													"host": [
+														"{{proofpoint_ip}}"
+													],
+													"path": [
+														"{{proofpoint_path}}",
+														"proofpoint",
+														"1",
+														"usecases",
+														"report-training",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "report training params",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"type": "text",
+														"value": "Bearer {{jwttoken}}"
+													},
+													{
+														"key": "X-User-Defined-Remote-API-Token",
+														"value": "{{User_Defined_Remote_API_Token}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-training/",
+													"protocol": "{{proto}}",
+													"host": [
+														"{{proofpoint_ip}}"
+													],
+													"path": [
+														"{{proofpoint_path}}",
+														"proofpoint",
+														"1",
+														"usecases",
+														"report-training",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "report phishing",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"type": "text",
+														"value": "Bearer {{jwttoken}}"
+													},
+													{
+														"key": "X-User-Defined-Remote-API-Token",
+														"value": "{{User_Defined_Remote_API_Token}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"data\": {\n        \"campaignname\": \"Test - Base64 - a3\"\n    }\n}"
+												},
+												"url": {
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-phishing/",
+													"protocol": "{{proto}}",
+													"host": [
+														"{{proofpoint_ip}}"
+													],
+													"path": [
+														"{{proofpoint_path}}",
+														"proofpoint",
+														"1",
+														"usecases",
+														"report-phishing",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "report phishing params",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"type": "text",
+														"value": "Bearer {{jwttoken}}"
+													},
+													{
+														"key": "X-User-Defined-Remote-API-Token",
+														"value": "{{User_Defined_Remote_API_Token}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{proto}}://{{proofpoint_ip}}/{{proofpoint_path}}/proofpoint/1/usecases/report-phishing/",
+													"protocol": "{{proto}}",
+													"host": [
+														"{{proofpoint_ip}}"
+													],
+													"path": [
+														"{{proofpoint_path}}",
+														"proofpoint",
+														"1",
+														"usecases",
+														"report-phishing",
 														""
 													]
 												}
